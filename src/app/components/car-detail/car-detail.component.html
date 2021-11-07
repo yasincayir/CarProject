@@ -1,0 +1,21 @@
+<div *ngFor="let car of cars"class="card">
+    <div class="card-header">
+      <b style="color: gray;">Vehicle ID: {{car.id}}</b>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Vehicle Name:  {{car.carName}}</h5>
+      <ul class="list-group">
+        <li class="list-group-item ">
+          <div class="card-image d-block" style="text-align: center;">
+            <img style="width: 80%; height: 50%;" class=""
+            src="https://localhost:44345/{{car.imagePath}}" alt="{{car.carName}}">
+          </div>
+        </li>
+        <li class="list-group-item">
+            <b>Daily Price:</b> {{car.dailyPrice}} Turkish Liras
+        </li>
+        <li class="list-group-item "><b>Brand:</b> {{car.brandName}}</li>
+        <li class="list-group-item "><b>Color:</b> {{car.colorName}}</li>
+      </ul>
+    </div>
+  </div>

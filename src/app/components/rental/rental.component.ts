@@ -11,6 +11,7 @@ import { RentalService } from 'src/app/services/rental.service';
 export class RentalComponent implements OnInit {
 
   rentals:Rental[]=[];
+  currentRental:Rental;
   constructor(private rentalService:RentalService) { }
 
   ngOnInit(): void {
@@ -21,6 +22,18 @@ export class RentalComponent implements OnInit {
     this.rentalService.getRentalDetail().subscribe(response=>{
       this.rentals=response.data
     })
+  }
+
+  setCurrentRental(rental:Rental){
+    this.currentRental=rental;
+  }
+
+  getCurrentRentalClass(rental:Rental){
+    if (rental==this.currentRental) {
+      return "list-group-item active"
+    }else{
+      return "list-group-item"
+    }
   }
 
 }

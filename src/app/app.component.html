@@ -2,19 +2,16 @@
 <div class="container">
     <app-navi></app-navi>
     <div class="row" style="margin-top: 20px;">
-        <div class="col-md-2">
-            <app-customer></app-customer>
-        </div>    
-        <div class="col-md-2">
-            <app-color></app-color>         
-        </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
+            <h3 id="filtre">Filtrele</h3>
             <app-brand></app-brand>
+            <app-color></app-color> 
+            <app-customer></app-customer>
+            <app-rental></app-rental>
+            <br><br><br>
+        </div>    
+        <div class="col-md-9">
+            <router-outlet></router-outlet>     
         </div>
-        <div class="col-md-6">
-            <app-car></app-car>     
-        </div>
-    </div>
-    <app-rental></app-rental>
+    </div>  
 </div>
-<router-outlet></router-outlet>

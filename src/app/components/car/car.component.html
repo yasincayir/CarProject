@@ -1,7 +1,7 @@
 <div *ngIf="dataLoaded==false" class="spinner-border" role="status">
   <span  class="visually-hidden">Loading...</span>
 </div>
-<table  class="table" style="background: yellow;">
+<table  class="table">
     <thead *ngIf="dataLoaded==true">
         <tr class="table-dark">
         <th scope="col">Ad</th>
@@ -11,7 +11,9 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let car of cars">
+        <tr
+        routerLink="/cars/{{car.id}}"
+         *ngFor="let car of cars">
         <td>{{car.carName}}</td>
         <td>{{car.brandName}}</td>
         <td>{{car.colorName}}</td>

@@ -1,6 +1,8 @@
 
-
-<ul class="list-group" *ngFor="let rental of rentals">
-    <li  class="list-group-item">Araba Markası:{{rental.brandName}} <br> Kiralayan:{{rental.name}}</li>
-    <li  class="list-group-item"></li>
-  </ul>
+<ul class="list-group">
+  <li id="caption" class="list-group-item"> <h5>Kiralanmış Araçlar</h5></li>
+  <li [class]="getCurrentRentalClass(rental)"
+  (click)="setCurrentRental(rental)" 
+  *ngFor="let rental of rentals">{{rental.brandName}}
+</li>
+</ul>
