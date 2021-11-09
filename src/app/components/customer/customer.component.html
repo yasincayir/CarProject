@@ -1,10 +1,16 @@
 
  
 <ul class="list-group">
-  <li id="caption" class="list-group-item"> <h5>Müşteriler</h5></li>
+  <li id="caption" class="list-group-item"> 
+    <table>
+      <tr>
+        <td>Şirket:</td>
+        <td><input [(ngModel)]="filterCustomerText" width="100px" placeholder="Ara..." type="text"></td>
+      </tr>
+    </table>
   <li [class]="getCurrentCustomerClass(customer)"
   (click)="setCurrentCustomer(customer)" 
-  *ngFor="let customer of customers">{{customer.companyName}}
+  *ngFor="let customer of customers |filterCustomer:filterCustomerText">{{customer.companyName}}
 </li>
 </ul>
  

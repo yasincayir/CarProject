@@ -1,19 +1,17 @@
-
 <ul class="list-group">
-  <li
-  style="background-color: black; color: white;"
-  routerLink="/"
-  class="list-group-item" 
-  >Tüm Araçlar</li>
-  <li id="caption"
-      class="list-group-item"> <h5>Markalar</h5>
+  <li style="background-color: black; color: white;" routerLink="/" class="list-group-item">Tüm Araçlar</li>
+  <li id="caption" class="list-group-item">
+    <table>
+      <tr>
+        <td>Marka</td>
+        <td><input [(ngModel)]="filterBrandText" width="100px" placeholder="Ara..." type="text"></td>
+      </tr>
+    </table>
   </li>
-  <li
-  routerLink="/cars/brand/{{brand.id}}"
-   [class]="getCurrentBrandClass(brand)"
-  (click)="setCurrentBrand(brand)" 
-  *ngFor="let brand of brands">{{brand.name}}
-</li>
+  <li 
+      
+      routerLink="/cars/brand/{{brand.id}}" [class]="getCurrentBrandClass(brand)" 
+     (click)="setCurrentBrand(brand)"
+     *ngFor="let brand of brands |filterBrand:filterBrandText">{{brand.name}}
+  </li>
 </ul>
-
-

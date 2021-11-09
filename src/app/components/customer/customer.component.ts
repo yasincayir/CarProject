@@ -11,6 +11,7 @@ export class CustomerComponent implements OnInit {
 
   customers:Customer[]=[];
   currentCustomer:Customer;
+  filterCustomerText:""
   constructor(private customerService:CustomerService) { }
 
   ngOnInit(): void {

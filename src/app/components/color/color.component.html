@@ -1,10 +1,16 @@
 
 <ul class="list-group">
-  <li id="caption" class="list-group-item"> <h5>Renkler</h5></li>
+  <li id="caption" class="list-group-item">
+    <table>
+      <tr>
+        <td>Renk</td>
+        <td><input [(ngModel)]="filterColorText" width="100px" placeholder="Ara..." type="text"></td>
+      </tr>
+    </table>
   <li 
   routerLink="/cars/color/{{color.id}}"
   [class]="getCurrentColorClass(color)"
   (click)="setCurrentColor(color)" 
-  *ngFor="let color of colors">{{color.name}}
+  *ngFor="let color of colors |filterColor:filterColorText">{{color.name}}
 </li>
 </ul>
